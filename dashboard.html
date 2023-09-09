@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <link rel="stylesheet" href="styles.css" /> -->
+  <title>SIH DashBoard</title>
+
+  <style>
+    body {
+      background: linear-gradient(to bottom right, purple, white, skyblue, #ffffff, purple);
+      color: black;
+      font-family: monospace;
+      margin: 0%;
+      padding: 0%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    .container1 {
+      border: 2px solid skyblue;
+      box-shadow: 10px 10px;
+      width: 95vw;
+      display: flex;
+      margin: 3vh;
+      padding: 0%;
+    }
+
+    #block1 {
+      height: 40vh;
+      width: 20vw;
+      border: 2px solid skyblue;
+      box-shadow: 5px 5px;
+      margin: 1vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #profilePhoto {
+      border: 2px solid skyblue;
+      height: 30vh;
+      width: 30vh;
+      border-radius: 50%;
+      background-image: url(https://cdn5.vectorstock.com/i/1000x1000/82/09/happy-kid-cartoon-vector-20988209.jpg);
+      background-size: 30vh;
+      padding: 0%;
+      margin: 1vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    img {
+      height: 5vh;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      display: none;
+      margin: 1vh;
+      /* padding: 1vh; */
+      transition: 1s ease all;
+    }
+
+    #profilePhoto:hover img {
+      display: block;
+    }
+
+    #details {
+      border: 2px solid skyblue;
+      margin: 1vh;
+      width: 80vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    h1 {
+      /* border: 2px solid teal; */
+      background-color: pink;
+      box-shadow: 10px 10px black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 3vh;
+      font-size: 8vh;
+    }
+
+    #stats {
+      border: 2px solid black;
+      width: 90vw;
+      height: 10vh;
+    }
+
+    span {
+      border: 2px solid skyblue;
+      width: 70vw;
+      /* box-shadow: 5px 5px black; */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      box-shadow: 5px 5px black;
+      font-size: 3vh;
+      margin: 1vh;
+      transition: 0.5s ease all;
+    }
+
+    .container2 {
+      width: 95vw;
+      height: 100vh;
+      border: 2px solid skyblue;
+      box-shadow: 5px 5px;
+      margin: 3vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .container2 h1 {
+      /* font-size: 3vh; */
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+    }
+
+    .statistics {
+      /* height: 7vh; */
+      width: 90vw;
+      border: 2px solid skyblue;
+      background-color: pink;
+      box-shadow: 5px 5px black;
+      color: #f24c3d;
+      /* display: flex; */
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 4vh;
+      margin: 2vh;
+    }
+
+    /* Style the buttons that are used to open and close the accordion panel */
+    .accordion {
+      background-color: pink;
+      color: #f24c3d;
+      cursor: pointer;
+      font-family: monospace;
+      padding: 15px;
+      width: 90vw;
+      font-size: 5vh;
+      overflow: hidden;
+      text-align: center;
+      border: none;
+      outline: none;
+      transition: 0.4s;
+    }
+
+    .chapters {
+      font-family: monospace;
+      text-align: left;
+    }
+
+    .active,
+    .accordion:hover {
+      background-color: skyblue;
+    }
+
+    .panel {
+      padding: 0 1px;
+      background-color: white;
+      color: black;
+      display: none;
+      overflow: hidden;
+    }
+
+    /* .progress{
+    border: 2px solid mediumaquamarine;
+    height: 50%;
+    width: 0%;
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+    transition: 1s ease all;
+}
+
+.progress:hover{
+    background-color: aliceblue;
+    width: 70%;
+} */
+
+    .fancyCardContainer {
+      /* height: 50vh; */
+      width: 95vw;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid skyblue;
+      box-shadow: 10px 10px black;
+    }
+
+    .flipcontainer {
+      width: 40vh;
+      height: 50vh;
+      margin: 2vh;
+      perspective: 60vh;
+    }
+
+    .card {
+      height: 100%;
+      width: 100%;
+      position: relative;
+      color: black;
+      transition: transform 1500ms;
+      transform-style: preserve-3d;
+    }
+
+    .flipcontainer:hover>.card {
+      cursor: pointer;
+      transform: rotateY(180deg) rotateZ(180deg);
+    }
+
+    .front,
+    .back {
+      height: 100%;
+      width: 100%;
+      border-radius: 2rem;
+      position: absolute;
+      backface-visibility: hidden;
+    }
+
+    .front {
+      background-image: url(https://cdn-icons-png.flaticon.com/512/3135/3135780.png);
+      background-repeat: no-repeat;
+      background-size: 40vh 50vh;
+    }
+
+    .back {
+      background-color: transparent;
+      border: 2px solid black;
+      transform: rotateY(180deg) rotateZ(180deg);
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      font-size: 3vh;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .bigTitle {
+      width: 100vw;
+      border: 2px solid skyblue;
+      box-shadow: 10px 10px black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 10vh;
+    }
+
+    #xyz {
+      border: 2px solid skyblue;
+      box-shadow: 10px 10px black;
+      color: #f24c3d;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      /* font-size: 8vh; */
+      margin: 2vh;
+      font-size: 5vh;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container1">
+    <div id="details">
+      <h1>Name</h1>
+      <span>@UserName</span>
+      <span>🕑 Joined On: 8th Sept 2023</span>
+      <span>✨ Followers/Following</span>
+      <span>🏴 Maharashtra</span>
+    </div>
+    <div id="block1">
+      <div id="profilePhoto">
+        <img src="https://cdn-icons-png.flaticon.com/512/2541/2541991.png" alt="" />
+      </div>
+    </div>
+  </div>
+  <div class="container2">
+    <h1 id="stats">Statistics</h1>
+    <div class="statistics" id="blocks1">
+      🔥6 Days Day Streak
+    </div>
+    <div class="statistics" id="blocks2">⚡Total XP</div>
+    <div class="statistics" id="blocks4">🏅Badges</div>
+    <div class="progress"></div>
+    <div class="statistics" id="blocks3">
+      <button class="accordion" class="statistics">🌟Progress</button>
+      <div class="panel">
+        <button class="accordion" class="chapters">Chapter 1 ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­
+          ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ✅</button>
+        <button class="accordion" class="chapters">Chapter 2 ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­
+          ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ 🔒</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="fancyCardContainer">
+    <h1 class="bigTitle">Achievements</h1>
+    <div class="flipcontainer">
+      <div class="card">
+        <div class="front"></div>
+        <div class="back">
+          <h1 id="xyz">Achievement 1</h1>
+          <p>
+            Congratulations!🏆 <br>
+            Achievement Unlocked!🔓 <br>
+            You have been given a special batch for your consistent hardwork.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="flipcontainer">
+      <div class="card">
+        <div class="front"></div>
+        <div class="back">
+          <h1 id="xyz">Achievement 2</h1>
+          <p>
+            Congratulations!🏆 <br>
+            Achievement Unlocked!🔓 <br>
+            You have been given a special batch for your consistent hardwork.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="flipcontainer">
+      <div class="card">
+        <div class="front"></div>
+        <div class="back">
+          <h1 id="xyz">Achievement 3</h1>
+          <p>
+            Congratulations!🏆 <br>
+            Achievement Unlocked!🔓 <br>
+            You have been given a special batch for your consistent hardwork.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="flipcontainer">
+      <div class="card">
+        <div class="front"></div>
+        <div class="back">
+          <h1 id="xyz">Achievement 4</h1>
+          <p>
+            Congratulations!🏆 <br>
+            Achievement Unlocked!🔓 <br>
+            You have been given a special batch for your consistent hardwork.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        /* Toggle between adding and removing the "active" class,
+  to highlight the button that controls the panel */
+        this.classList.toggle("active");
+
+        /* Toggle between hiding and showing the active panel */
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>
