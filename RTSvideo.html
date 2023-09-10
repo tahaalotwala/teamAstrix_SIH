@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.rtl.min.css"
+        integrity="sha384-PRrgQVJ8NNHGieOA1grGdCTIt4h21CzJs6SnWH4YMQ6G5F5+IEzOHz67L4SQaF0o" crossorigin="anonymous">
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+
+    <style>
+        .container-fluid {
+            padding: 0;
+        }
+
+        .page-container {
+            /* background: rgb(251, 224, 255); */
+            /* background: linear-gradient(176deg, rgba(253, 197, 255, 1) 0%, rgba(255, 255, 255, 1) 100%); */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            color: rgb(153, 64, 255);
+            font-family: 'Acme', sans-serif;
+            font-size: 38px;
+            margin-bottom: 10px;
+            /* Adjusted margin below the title */
+            margin-top: 20px;
+        }
+
+        .title {
+            color: rgb(90, 167, 255);
+            font-family: 'Acme', sans-serif;
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        .video-summary-container {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.3em;
+            line-height: 1.2em;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .video-container,
+        .summary-container {
+            flex: 1;
+            box-sizing: border-box;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            position: relative;
+            /* Added position relative */
+        }
+
+        .video-container img {
+            width: 100%;
+            max-height: auto;
+            cursor: pointer;
+            object-fit: contain;
+            position: relative;
+        }
+
+        .video-container .overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .video-container .overlay img {
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        video {
+            max-width: 100%;
+            height: auto;
+            width: 100%;
+            display: none;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .summary-container {
+            background: rgb(253, 203, 255);
+            background: linear-gradient(149deg, rgba(253, 203, 255, 1) 0%, rgba(69, 160, 255, 1) 100%);
+            border-radius: 12px;
+            border: 1px solid #ffd700;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            margin: 1em;
+            /* Adjusted margin for small devices */
+            padding: 2em;
+        }
+
+        .quiz-button-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2em;
+        }
+
+        #quiz-btn {
+            width: 200px;
+            padding: 15px 0;
+            text-align: center;
+            font-weight: bold;
+            border: 2px solid #3c97ff;
+            background: transparent;
+            color: #020202;
+            cursor: pointer;
+            overflow: hidden;
+            text-transform: uppercase;
+            position: relative;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        #quiz-btn span {
+            background: #ffaffb;
+            height: 100%;
+            width: 0;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+            transition: 0.5s;
+        }
+
+        #quiz-btn:hover span {
+            width: 100%;
+        }
+
+        /* Styles for the close button */
+        #closeButton {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 40px;
+            /* Increased width */
+            height: 40px;
+            /* Increased height */
+            cursor: pointer;
+            display: none;
+            z-index: 1;
+            border-radius: 50%;
+        }
+
+        /* Show close button when video is playing */
+        video.isPlaying+#closeButton {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+
+            /* Adjust spacing for small devices */
+            h1 {
+                font-size: 24px;
+                margin-bottom: 5px;
+                margin-top: 10px;
+            }
+
+            .summary-container {
+                margin: 0.5em;
+                /* Adjusted margin for small devices */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="page-container">
+            <h1 class="my-2 ">RIGHT TO SAFETY</h1>
+            <h2 class="title"><span>The Safe Playground Rescue in Dholakpur</span></h2>
+            <div class="row video-summary-container">
+                <div class="col-md-6 mb-4">
+                    <div class="video-container mx-5">
+                        <a href="#" id="playButton">
+                            <img src="./images/RTSimage.png" alt="Video Thumbnail">
+                        </a>
+                        <video controls id="videoPlayer">
+                            <source src="./videos/Right To Safety.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <!-- Close button inside the video-container -->
+                        <img src="./images/close.png" alt="Close" id="closeButton">
+                    </div>
+                </div>
+                <div class="col-md-6 summryAndButton">
+                    <div class="summary-container pt-3 my-1 mx-5">
+                        <h2><u>SUMMARY</u></h2>
+                        <p>"In a colorful town called Dholakpur, some kids liked to play in a park with a fun slide. One
+                            day,
+                            they saw the slide was broken and decided not to use it because it was unsafe. They listened
+                            to
+                            an adult named Ramu kaka who told them to be safe.
+                            <br><br>
+                            After a few weeks, the slide got fixed, and they could play on it again. The story teaches
+                            us
+                            that
+                            it's important to stay safe, listen to grown-ups, and take care of our friends and
+                            ourselves."
+                        </p>
+                    </div>
+                    <!-- New div for the quiz button -->
+                    <div class="quiz-button-container" id="quizButtonContainer">
+                        <button id="quiz-btn" type="button" onclick="redirectToQuiz()"><span></span>Take a quick
+                            Quiz</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript code to display the close button when the video is playing
+        const playButton = document.getElementById("playButton");
+        const videoPlayer = document.getElementById("videoPlayer");
+        const closeButton = document.getElementById("closeButton");
+
+        playButton.addEventListener("click", () => {
+            playButton.style.display = "none";
+            videoPlayer.style.display = "block";
+            videoPlayer.play();
+        });
+
+        // Add event listener to check if the video is playing
+        videoPlayer.addEventListener("play", () => {
+            videoPlayer.classList.add("isPlaying");
+        });
+
+        // Add event listener to reload the page when the close button is clicked
+        closeButton.addEventListener("click", () => {
+            location.reload();
+        });
+
+        // Function to redirect to the quiz page
+        function redirectToQuiz() {
+            window.location.href = "RTSquiz.html";
+        }
+    </script>
+</body>
+
+</html>
