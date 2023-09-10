@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background: linear-gradient(
+          to bottom right,
+          purple,
+          white,
+          skyblue,
+          #ffffff,
+          purple
+        );
+        background-repeat: no-repeat;
+      }
+      .flex-box {
+        display: flex;
+        border: 2px solid red;
+        width: 100vw;
+        height: 200vh;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .box {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        height: 150vh;
+        width: 80vw;
+        background-color: transparent;
+        border: 2px solid black;
+        border-radius: 10px;
+        justify-content: center;
+        box-shadow: 10px 10px black;
+      }
+      .book {
+        border: 5px solid green;
+        height: 20vh;
+        box-shadow: 3px 3px black;
+        transition: transform 0.2s;
+      }
+      .laws {
+        /* border: 2px solid black; */
+        display: block;
+        text-align: center;
+        margin: 10px;
+      }
+      .headings {
+        width: 98%;
+        text-align: center;
+        margin-left: 2px;
+        border: 2px solid teal;
+        box-shadow: 3px 3px;
+      }
+      .book:hover {
+        transform: scale(1.15);
+        box-shadow: 4px 4px black;
+      }
+      .images {
+        display: flex;
+        /* height: 20vh; */
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      .links {
+        text-decoration: none;
+        color: whitesmoke;
+        display: block;
+        text-align: center;
+        margin: 3px;
+        transition: transform 0.2s;
+      }
+      .links:hover {
+        color: rgb(34, 34, 223);
+        transform: scale(1.15);
+      }
+      .videos {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+      }
+      .video {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        min-width: 10vw;
+        margin: 5px;
+        border-radius: 2px;
+        transition: transform 0.2s;
+      }
+      .video:hover {
+        transform: scale(1.15);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-box">
+      <div class="box" id="box1">
+        <h1 class="laws">References</h1>
+        <h2 class="headings">Books</h2>
+        <div class="images">
+          <a
+            class="image"
+            href="https://crpc.in/images/child-law.pdf"
+            target="_blank"
+            ><img
+              class="book"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDn5tKXahESisZQPRWnBqWQAdHviCIbx6CZw&usqp=CAU"
+              alt="book image"
+          /></a>
+          <a
+            class="image"
+            href="https://www.unicef.org/media/60981/file/convention-rights-child-text-child-friendly-version.pdf"
+            target="_blank"
+            ><img
+              class="book"
+              src="https://img.freepik.com/free-vector/books-with-children-white-background_1308-20924.jpg?w=2000"
+              alt="book image"
+          /></a>
+          <a
+            class="image"
+            href="https://wcd.nic.in/sites/default/files/TheGazetteofIndia.pdf"
+            target="_blank"
+            ><img
+              class="book"
+              src="https://www.indianbooksandperiodicals.com/images/14200/Children_and_Human_Rights_From_Visi.jpeg"
+              alt="book image"
+          /></a>
+        </div>
+        <h2 class="headings">Websites</h2>
+        <a
+          class="links"
+          href="https://childrensrightseducation.com/index.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          >1. Children's Rights Education</a
+        >
+        <a
+          class="links"
+          href="https://ncpcr.gov.in/#:~:text=Home%20%2D%20National%20Commission%20for%20Protection%20of%20Child%20Rights%2C%20India"
+          target="_blank"
+          rel="noopener noreferrer"
+          >2. Goverment of india
+        </a>
+        <a
+          class="links"
+          href="https://www.un.org/en/global-issues/child-and-youth-safety-online"
+          target="_blank"
+          rel="noopener noreferrer"
+          >3. United Nations
+        </a>
+        <a
+          class="links"
+          href="https://www.unicef.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >4. UNCEF
+        </a>
+        <h2 class="headings">Videos</h2>
+        <div class="videos">
+          <iframe
+            class="video"
+            src="https://www.youtube.com/embed/6F7ie1Z07aM?si=3U0fy9fmERrut1uK"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+          <iframe
+            class="video"
+            src="https://www.youtube.com/embed/PTC6EsYqr8Q?si=LTAh5u-lKUvwnzwQ"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+          <iframe
+            class="video"
+            src="https://www.youtube.com/embed/GAYVZD0yV2w?si=xdbTyboTq9tFeSwP"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
