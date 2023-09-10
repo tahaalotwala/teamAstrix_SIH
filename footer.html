@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+    <style>
+        /* Resetting some default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            color: black;
+            box-sizing: border-box;
+        }
+
+        /* Gradient Background */
+        body {
+            background: linear-gradient(to bottom right,
+                pink,
+                skyblue,
+                pink
+            );
+            /* background-image: url(https://media.istockphoto.com/id/1275326600/vector/angular-vector-pattern-design-abstract-background.jpg?s=612x612&w=0&k=20&c=9tFSv-z3sWnVCV2WhYjV0vOdqrw4w8PC0l4z3q21lng=); */
+            height: 100vh; /* Make the background cover the entire viewport height */
+            overflow: hidden; /* Prevent scrollbars */
+        }
+
+        /* Footer Styles */
+        footer {
+            display: grid;
+            grid-template-columns: 20% 20% 20% 35%;
+            gap: 1em;
+            background: transparent;
+            border: 2px solid teal;
+            padding: 20px;
+            position: absolute;
+            bottom: 1vh;
+            width: 100%;
+            height: auto;
+        }
+        .container{
+            backdrop-filter: blur(10px);
+            border: 2px solid teal;
+            width: 100%;
+            grid-column: span 2;
+        }
+
+        /* Social Icons */
+        .social-icons-block {
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            width: auto;
+        }
+        .social-icons-container{
+            backdrop-filter: blur(10px);
+            border: 3px solid #009688;
+            background-color: transparent;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            mix-blend-mode: multiply;
+            background-size: cover;
+            border-radius: 50%;
+            height: 3em;
+            width: 3em;
+            padding: 1em;
+            margin: 1em;
+            
+            transition: 0.5s ease all;
+        }
+        .social-icons-container:hover{
+            border: 3px solid #00fffb;
+            box-shadow: 0 0 10px #00fffb;
+        }
+        .social-icons-container:nth-child(1){
+            background-image: url(https://brandeps.com/icon-download/G/Google-icon-vector-01.svg);
+        }
+        .social-icons-container:nth-child(2){
+            background-image: url(https://brandeps.com/icon-download/I/Instagram-icon-vector-01.svg);
+        }
+        .social-icons-container:nth-child(3){
+            background-image: url(https://brandeps.com/icon-download/T/Twitter-icon-vector-01.svg);
+        }
+
+
+        .logo{
+            backdrop-filter: blur(10px);
+            border: 2px solid teal;
+            height: 10em;
+            width: auto;
+            background-image: url(fashion.png);
+            background-position: center;
+            background-size:cover ;
+            mix-blend-mode: multiply;
+        }
+
+
+        .aboutUs{
+            backdrop-filter: blur(10px);
+            border: 2px solid teal;
+            font-size: 1.5em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        ul{
+            list-style: none;
+        }
+
+
+        .LearnMore{
+            border: 2px solid teal;
+            font-size: 1.5em;
+            backdrop-filter: blur(10px);
+            grid-row: span 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+
+        .AdsSection{
+            backdrop-filter: blur(10px);
+            border: 2px solid teal;
+            grid-row: span 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        img{
+            backdrop-filter: blur(10px);
+            /* border: 2px solid teal; */
+            height: 10em;
+            object-fit: cover;
+            object-position: contain;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Content Goes Here -->
+    
+    <footer>
+
+        
+        
+        <div class="logo"></div>
+        
+        
+        
+        
+        <div class="aboutUs">
+            <ul>
+                <li><b>Company</b></li>
+                <li>About Us</li>
+                <li>Contact Us</li>
+                <li>Plans</li>
+                <li>Join</li>
+                <li>FAQs</li>
+            </ul>
+        </div>
+
+
+        <div class="LearnMore">
+            <ul>
+                <li><b>Learn More</b></li>
+                <li>Pricing</li>
+                <li>Teams</li>
+                <li>Creators</li>
+                <li>API</li>
+                <li>Help Desk</li>
+            </ul>
+        </div>
+
+
+
+
+        <div class="AdsSection">
+            <ul>
+                <li><b><h1>Ads</h1></b></li>
+                <li>
+                    <div class="img">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Ads_logo.svg/1200px-Google_Ads_logo.svg.png" alt="">
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+
+        <div class="container">
+        <div class="social-icons-block">
+                <div class="social-icons-container" id="icon1"><a href="#"></a></div>
+                <div class="social-icons-container" id="icon2"><a href="#"></a></div>
+                <div class="social-icons-container" id="icon3"><a href="#"></a></div>
+            </div>
+
+        </div>
+
+            
+    </footer>
+</body>
+</html>
