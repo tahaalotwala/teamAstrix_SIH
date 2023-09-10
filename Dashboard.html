@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>SIH DashBoard</title>
+  </head>
+  <body>
+    <div class="container1">
+      <div id="details">
+        <h1>Name</h1>
+        <span>@UserName</span>
+        <span>🕑 Joined On: 8th Sept 2023</span>
+        <span
+          >✨ Followers/Following</span
+        >
+        <span>🏴 Maharashtra</span>
+      </div>
+      <div id="block1">
+        <div id="profilePhoto">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/2541/2541991.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+    <div class="container2">
+      <h1 id="stats">Statistics</h1>
+      <div class="statistics" id="blocks1">
+        🔥6 Days Day Streak
+      </div>
+      <div class="statistics" id="blocks2">⚡Total XP</div>
+      <div class="statistics" id="blocks4">🏅Badges</div>
+      <div class="progress"></div>
+      <div class="statistics" id="blocks3">
+        <button class="accordion" class="statistics">🌟Progress</button>
+        <div class="panel">
+          <button class="accordion" class="chapters">Chapter 1  ­  ­  ­  ­  ­  ­  ­  ­  ­  ­   ­  ­  ­  ­  ­  ­  ­  ­  ­  ­   ­  ­  ­  ­  ­  ­  ­  ­  ­  ­   ­  ­  ­  ­  ­  ­  ­  ­  ­  ­   ­  ­  ­  ­  ­  ­  ­  ­  ­  ­ ✅</button>
+          <button class="accordion" class="chapters">Chapter 2  ­  ­  ­  ­  ­  ­  ­  ­  ­  ­   ­  ­  ­  ­  ­  ­  ­  ­  ­  ­   ­  ­  ­  ­  ­  ­  ­  ­  ­  ­   ­  ­  ­  ­  ­  ­  ­  ­  ­  ­   ­  ­  ­  ­  ­  ­  ­  ­  ­  ­ 🔒</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="fancyCardContainer">
+      <h1 class="bigTitle">Achievements</h1>
+      <div class="flipcontainer">
+        <div class="card">
+          <div class="front"></div>
+          <div class="back">
+            <h1 id="xyz">Achievement 1</h1>
+            <p>
+              Congratulations!🏆 <br>
+              Achievement Unlocked!🔓 <br>
+              You have been given a special batch for your consistent hardwork.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="flipcontainer">
+        <div class="card">
+          <div class="front"></div>
+          <div class="back">
+            <h1 id="xyz">Achievement 2</h1>
+            <p>
+              Congratulations!🏆 <br>
+              Achievement Unlocked!🔓 <br>
+              You have been given a special batch for your consistent hardwork.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="flipcontainer">
+        <div class="card">
+          <div class="front"></div>
+          <div class="back">
+            <h1 id="xyz">Achievement 3</h1>
+            <p>
+              Congratulations!🏆 <br>
+              Achievement Unlocked!🔓 <br>
+              You have been given a special batch for your consistent hardwork.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="flipcontainer">
+        <div class="card">
+          <div class="front"></div>
+          <div class="back">
+            <h1 id="xyz">Achievement 4</h1>
+            <p>
+              Congratulations!🏆 <br>
+              Achievement Unlocked!🔓 <br>
+              You have been given a special batch for your consistent hardwork.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var acc = document.getElementsByClassName("accordion");
+      var i;
+
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+          /* Toggle between adding and removing the "active" class,
+    to highlight the button that controls the panel */
+          this.classList.toggle("active");
+
+          /* Toggle between hiding and showing the active panel */
+          var panel = this.nextElementSibling;
+          if (panel.style.display === "block") {
+            panel.style.display = "none";
+          } else {
+            panel.style.display = "block";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

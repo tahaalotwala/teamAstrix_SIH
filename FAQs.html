@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="" />
+    <title>FAQs Sections</title>
+    <style>
+      body {
+        background-image: url(https://img.freepik.com/free-vector/legal-statement-court-notice-judge-decision-judicial-system-lawyer-attorney-studying-papers-cartoon-character_335657-1598.jpg?w=740&t=st=1694339626~exp=1694340226~hmac=65e92a7517cab3ec23c71f49976ba0c2664efb599f7550b72958d760b8c8fedb);
+        background-repeat: no-repeat;
+        background-size: center;
+        background-position: right;
+        margin: 0%;
+        padding: 0%;
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+        text-align: center;
+      }
+      .maindhruvContainer {
+        background: linear-gradient(
+          to bottom right,
+          rgb(69, 152, 236),
+          skyblue,
+          rgb(69, 152, 236)
+        );
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        overflow: hidden;
+        border: 2px solid black;
+        width: 40%;
+        height: 80%;
+        overflow: auto;
+        overscroll-behavior-y: initial;
+        margin: 5vw;
+      }
+      .textdhruvContainer {
+        /* border: 2px solid brown; */
+        text-align: left;
+        font-size: 2rem;
+        width: 90%;
+        margin: 1%;
+        padding-top: 20%;
+      }
+
+      .accordion {
+        border: 2px solid black;
+        margin: 1%;
+        padding: 1%;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+
+      .accordion-btn {
+        background-color: transparent;
+        color: black;
+        cursor: pointer;
+        font-size: 3vh;
+        text-align: left;
+        padding: 10px;
+        margin: 1%;
+        width: 100%;
+        text-align: left;
+        border: 2px solid transparent;
+        text-wrap: wrap;
+        transition: 0.5s ease all;
+      }
+
+      .accordion-btn:hover {
+        background-color: skyblue;
+      }
+
+      /* CSS for the accordion with smooth transition */
+      .accordion-content {
+        display: none;
+        padding: 10px 20px;
+        background-color: transparent;
+        font-size: 3vh;
+        text-align: left;
+        /* border: 2px solid yellow; */
+        max-height: 0;
+        overflow: hidden;
+        opacity: 1;
+        transition: max-height 0.5s ease, opacity 0.5s ease;
+      }
+
+      .active + .accordion-content {
+        max-height: 500px; /* Adjust the maximum height as needed */
+        padding: 10px;
+        opacity: 1;
+      }
+
+      .mydiv {
+        /* border: 2px solid fuchsia; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        margin-top: 10%;
+        /* padding: 10%; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="maindhruvContainer">
+      <div class="mydiv">
+        <div class="textdhruvContainer">
+          <h1>FAQs...</h1>
+        </div>
+        <div class="accordion">
+          <button class="accordion-btn">
+            How old do I have to be in order to get my driving licence?
+          </button>
+          <div class="accordion-content">
+            <p>
+              Individuals should be above 16 years of age to apply for a two
+              wheeler driving licence and above 18 years of age to apply for a
+              vehicle driving licence. Applicants who wish to apply for a
+              transport vehicle driving licence have to be above 20 years of
+              age.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <button class="accordion-btn">
+            Is there any law in India that if a teenager (less than 18) meets
+            with an accident then his/her parents are to be blamed and sent to
+            jail?
+          </button>
+          <div class="accordion-content">
+            <p>
+              The Motor Vehicles Act (1988) and, in some cases, the Indian Penal
+              Code govern accidents. If the guardian/parent/owner took
+              precautions to prevent the juvenile from accessing the vehicle,
+              they may not be held responsible. Otherwise, under the amended
+              Motor Vehicle Act, they could face 3 years of imprisonment and a
+              ₹25,000 fine. Juveniles may also be fined, and the Juvenile
+              Justice Act may impose custodial sentences.
+              <br />
+              In a notable case, Rakesh Kumar Arora's 14-year-old son caused a
+              fatal accident, leading to a compensation claim by Balwant Singh.
+              Initially, the high court ruled that both Rakesh Kumar Arora and
+              the insurance company were jointly liable. However, the Supreme
+              Court later overturned this decision, stating that the insurance
+              company was not liable. Therefore, even without guardian default,
+              insurance claims may not apply..
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <button class="accordion-btn">
+            What are the Cyber Laws for minors in India?
+          </button>
+          <div class="accordion-content">
+            <p>
+              the principle of Ss. 10 and 11 of the Indian Contract Act, no one
+              below the age of 18 can legally join any online portal, including
+              Facebook, Instagram, and Twitter, as this involves entering into
+              an e-contract with the administrators of the portal. <br /><br />
+              This view is explained by Nitish Chandan in his blog post,
+              'Minimum Age to Use Social Networks in India' published on The
+              Cyber Blog India on January 4, 2015. As per the article by Lakshay
+              Dhamija titled, 'India: E-Commerce in India' published on October
+              21, 2014.
+              <br />
+              On www.mondaq.com minors cannot engage in commercial transactions
+              online either. Generally, the parent or guardian will be liable to
+              make payments on behalf of minors.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <button class="accordion-btn">
+            What steps can I take if somebody harasses me mentally?
+          </button>
+          <div class="accordion-content">
+            <p>
+              Every citizen of the country has the right to live with dignity.
+              Mental Harassment or emotional or physical abuse is a punishable
+              offense and by any means, if you are a victim to such acts, you
+              should report to the police immediately.
+              <br />
+              The term “Mental Harassment” has not been specifically defined
+              under the Indian Penal Code, 1860 (IPC), however, harassment can
+              be interpreted in terms of cruelty or torture. The Sections
+              pertaining to mental harassment in IPC are as follows: – <br />
+              Section 294: Obscene acts and songs <br />
+              Section 354: Assault or criminal force to woman with intent to
+              outrage her modesty <br />
+              Section 354A: Sexual harassment and punishment for sexual
+              harassment. <br />
+              Section 498A <br />
+              Section 509 <br />
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <button class="accordion-btn">
+            Laws related Drinking alcohol and Consuming Drugs
+          </button>
+          <div class="accordion-content">
+            <p>
+              It is also important to understand that the penalty for underage
+              drinking, according to Section 77 of the Juvenile Justice (Care
+              and Protection of Children) Act, 2015, is imposed on the person
+              providing the alcohol, rather than the underage consumer. <br />
+              Children should be made to understand that the sale, use, and even
+              mere possession of drugs are all illegal under S.8 of the Narcotic
+              Drugs and Psychotropic Substances Act, 1985. Also, understand that
+              Section 77 of the Juvenile Justice Act imposes a penalty on the
+              person providing the drugs, rather than on the minor user.
+            </p>
+          </div>
+        </div>
+
+        <!-- Add more Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia quis, sit maxime quam esse nostrum cum vitae atque cupiditate voluptatum.s as needed -->
+      </div>
+    </div>
+    <script>
+      const buttons = document.querySelectorAll(".accordion-btn");
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", function () {
+          this.classList.toggle("active");
+          const content = this.nextElementSibling;
+
+          if (content.style.display === "block") {
+            content.style.display = "none";
+          } else {
+            content.style.display = "block";
+          }
+        });
+      });
+    </script>
+    <script>
+      var acc = document.getElementsByClassName("accordion-btn");
+      var i;
+
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
