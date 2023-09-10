@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;1,400&family=PT+Serif&family=Poppins:wght@400;700&family=Roboto+Slab&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+            <h1>RIGHT TO QUALITY EDUCATION</h1>
+            <h2>Title: <span>"Raju and the Magical Library"</span></h2>
+    <div class="row">
+        <div class="col">
+            <div class="feature-img">
+                <img src="videoimg.jpg" class="videoplay" width="100%" alt="">
+                <img src="play.png" class="play-btn" alt="" onclick="toggle()" onclick="playVideo('Right To Safety.mp4')">
+            </div>
+        </div>
+    </div>
+    <div class="summary">
+        <h2>SUMMARY</h2>
+        <p>"In a colorful town called Dholakpur, some kids liked to play in a park with a fun slide. One day, they saw the slide was broken and decided not to use it because it was unsafe. They listened to an adult named Ramu kaka who told them to be safe.
+            <br>
+            <br>
+            After a few weeks, the slide got fixed, and they could play on it again. The story teaches us that it's important to stay safe, listen to grown-ups, and take care of our friends and ourselves."</p>
+    </div>
+        <div class="videoPlayer" id="videoPlayer">
+            <video width="1200px" height="700px" controls id="myVideo" autoplay>
+                 <source src="Right To Safety.mp4" type="video/mp4"></video>
+           <img src="close.png" class="close-btn" onclick="stopVideo()" alt="">
+        </div>
+    </div>
+</body>
+
+    <script>
+        var videoPlayer = document.getElementById("videoPlayer");
+        var myVideo = document.getElementById("myVideo");
+        function toggle(){
+        videoPlayer.classList.toggle("active");
+        myVideo.pause();
+        myVideo.currentTime = 0;
+    }
+        function stopVideo(){
+            videoPlayer.style.display = "none";
+            myVideo.muted = true;
+        }
+        function playVideo(file)
+        {
+            myVideo.src=file;
+            videoPlayer.style.display = "block"
+            myVideo.muted = false;
+        }
+        // var videoPlayer = document.querySelector("videoPlayer")
+        // var video
+    </script>
+
+</html>
