@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subscription</title>
+    <style>
+      body
+      {
+        margin: 0;
+        padding: 0;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      }
+      .container {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .subs {
+        height: 90vh;
+        width: 30vw;
+        background: linear-gradient(rgb(141, 141, 220),white, rgb(215, 215, 136));
+        border: 2px solid black;
+        border-radius: 2%;
+      }
+      .head {
+        display: flex;
+        height: 8%;
+        padding: 4%;
+        align-items: center;
+      }
+      .logo {
+        height: 100%;
+        border-style: ridge;
+        border-radius: 50%;
+      }
+      .heading {
+        text-decoration: underline gray;
+        /* align-self: center; */
+        margin: auto;
+        margin-left: 9%;
+      }
+      .main{
+        border:1px solid black;
+        width:25vw;
+        margin: auto;
+        border-radius: 5%;
+        box-shadow: 5px 5px black;
+        padding: 5px;
+      }
+      h1,h3{
+        text-align:center;
+      }
+      h1,h3{
+        margin: 0;
+      }
+      h1{
+        margin-top: 5%;
+      }
+      h3{
+        margin-bottom: 5%;
+      }
+      .money{
+        width:100%;
+      }
+      .buy{
+        display: flex;
+        justify-content: center;
+        justify-content: space-evenly;
+      }
+      .btn{
+        width: 10vw;
+        height: 6vh;
+        background-color: transparent;
+        box-shadow: 2px 2px black;
+        border-radius: 20%;
+        font-weight: bolder;
+        font-size: 130%;
+        transition: transform 0.2s;
+        margin-top: 6%;
+      }
+      .btn:hover{
+        transform: scale(1.15);
+        background-color: rgb(214, 214, 126);
+      }
+      .free{
+        text-align: center;
+        border: 1px solid gray;
+        width: 60%;
+        margin: auto;
+        box-shadow: -2px -2px black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="subs">
+        <div class="head">
+          <img class="logo"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3ty8Ay1lmyy9vXkRYPHCvx513spWyf9wNdg&usqp=CAU"alt="logo"/>
+          <h1 class="heading">Subscription</h1>
+        </div>
+        <div class="main">
+            <h1> 👑Special Feature👑</h1>
+            <h2 class="feature">1. Get access to to real life stories</h2>
+            <h2 class="feature">2. One to One Sessions with &#160;&#160;&#160;&#160;&#160;Mentors</h2>
+            <h2 class="feature">3. Detailed Solutions to the Quiz</h2>
+            <h2 class="feature">4. Additional Stories with more&#160;&#160;&#160;&#160;&#160;&#160; videos content </h2>
+            <!-- <h2 class="feature">5. ejwejfhhhhh hhhhhhhewjdb sjdsjdcsjjm</h2>
+            <h2 class="feature">6. jdewdbbbbb bbbbbbxvxvx  vcvcvcvcvc </h2> -->
+        </div>
+        <div class="money">
+          <h1>₹ 149/-</h1>
+          <h3>per month</h3>
+          <h2 class="free">Free trial for 3 days</h2>
+        </div>
+        <div class="buy">
+          <button class="btn">Free Trial</button>
+          <button class="btn">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
